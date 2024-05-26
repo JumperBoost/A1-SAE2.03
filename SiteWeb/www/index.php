@@ -17,7 +17,7 @@
                     } else {
                     foreach($formules as $formule):
                     ?>
-                    <a class="menuF">
+                    <a class="menuF" href="menuF.php?idFormule=<?=$formule['idFormule']?>">
                         <div>
                             <div class="image"> <img class="image" src="../IMAGES/<?=$formule['imageFormule']?>.jpg"> </div>
                             <div class="text">
