@@ -1,3 +1,0 @@
-<?php global $connect;
-$fillInTheBlanks = ""; ?>
-
