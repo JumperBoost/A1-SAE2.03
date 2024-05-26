@@ -17,11 +17,17 @@
                     } else {
                     foreach($formules as $formule):
                     ?>
-                    <a>
+                    <a class="menuF">
                         <div>
-                            <div class="image"> <img src="../IMAGES/<?=$formule['imageFormule']?>.jpg"> </div>
-                            <h2><?=$formule['nomFormule']?></h2>
-                            <h3><?=$formule['prixFormule']?></h3>
+                            <div class="image"> <img class="image" src="../IMAGES/<?=$formule['imageFormule']?>.jpg"> </div>
+                            <div class="text">
+                                <h2><?=$formule['nomFormule']?></h2>
+                                <h3><?=$formule['prixFormule']?> €</h3>
+                                <p>
+                                    Description :
+                                    <br>
+                                    <?=$formule['description']?> </p>
+                            </div>
                         </div>
                     </a>
                     <?php endforeach ;}?>

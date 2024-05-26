@@ -22,29 +22,43 @@ nav > * {
     color: white;
     margin: auto 0;
 }
-
-div.menu{
-    flex-direction: row;
-    margin: auto;
-    max-width: 100px;
-}
-
-div.menu > a{
-    padding: 0 2px;
-    font-size: 40px;
-    text-decoration: none;
-    color: red;
-}
-div.menu > a:hover{
-    padding: 0;
-    text-decoration: none;
-    font-size: 44px;
-    color: saddlebrown;
-}
-
-nav > div.image {
-    margin: 0;
+main, section, div, a{
+    width: 100%;
     display: flex;
-    max-width: 8vw;
-    max-height: 8vw;
+}
+div.menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+div.menu > a {
+    width: 50%;
+}
+a.menuF > div{
+    margin: 5%;
+    text-decoration: none;
+    border-radius: 5%;
+    background-color: white;
+    width: 100%;
+    flex-direction: row;
+}
+
+div.text{
+    flex-direction: column;
+    width: 50%;
+
+
+}
+div.image {
+    max-width: 50%;
+
+}
+img.image {
+    max-width: 90%;
+    margin: 5%;
+    border-radius: 5%;
+
+}
+
+a.menuF:hover {
+
 }
