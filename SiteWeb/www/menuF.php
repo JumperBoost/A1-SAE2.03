@@ -12,17 +12,17 @@
                 <?php
                 include("general/connect.php");
 
-                if(isset($_GET["idFormule"])) {
-                    $id_formule= $_GET["idFormule"];
-                    $formules = mysqli_query($connect, "SELECT * FROM Formules WHERE idFormule = $id_formule ");
-                    $formule = mysqli_fetch_array($formules);
+                if(isset($_GET["idSalle"])) {
+                    $idSalle= $_GET["idSalle"];
+                    $Salles = mysqli_query($connect, "SELECT * FROM Salle WHERE idSalle = $idSalle ");
+                    $Salle = mysqli_fetch_array($Salles);
                 }
                 ?>
                 <div class="formule-menu">
-                    <h1><?=$formule['nomFormule']?></h1>
+                    <h1><?=$Salle['nomSalle']?></h1>
                     <div class="info">
                         <div class="image-f">
-                            <img src="../IMAGES/<?=$formule['imageFormule']?>.jpg">
+                            <img src="../IMAGES/<?=$Salle['nomSalle']?>.jpg">
                         </div>
                     </div>
                 </div>

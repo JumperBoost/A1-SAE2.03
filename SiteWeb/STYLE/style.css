@@ -1,0 +1,124 @@
+title, body, header, main, footer{
+    width: 100%;
+    display: flex;
+}
+body{
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: beige;
+}
+
+header {
+    height: 15vh;
+    background-color: sandybrown;
+}
+nav {
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    padding:5px;
+}
+nav .enfants {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    width:100%;
+}
+
+nav div {
+    height:100%;
+    align-content: center;
+}
+
+nav > .enfants *{
+    display: flex;
+    flex-direction: row;
+}
+
+nav > div h2:hover{
+    text-decoration: underline;
+}
+
+nav > div a {
+    color: white;
+    margin: auto 0;
+    text-decoration: none;
+}
+
+nav h1 {
+    font-size : 40px;
+    font-family: 'coffee_fills', 'Arial Black', serif;
+}
+
+nav h1:hover {
+    transform: scale(1.05);
+}
+
+nav img {
+    width: 5%;
+}
+
+nav .login {
+    text-align: end;
+    flex-direction:row-reverse;
+}
+
+nav h2 {
+    font-size: 20px;
+}
+
+nav div h2:hover, nav img:hover{
+    transform: scale(1.1);
+}
+
+nav h1, nav h2, nav img {
+    transition: transform 0.2s ease-in;
+}
+
+@font-face{
+    font-family: 'coffee_fills';
+    src:url('Fonts/coffee_fills/Coffee Fills.ttf');
+}
+
+main, section, a{
+    width: 100%;
+    display: flex;
+}
+div.menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+div.menu > a {
+    width: 50%;
+}
+a.menuF > div{
+    margin: 5%;
+    text-decoration: none;
+    border-radius: 5%;
+    background-color: white;
+    width: 100%;
+    flex-direction: row;
+}
+
+div.text{
+    flex-direction: column;
+    width: 50%;
+
+
+}
+div.image {
+    max-width: 50%;
+
+}
+img.image {
+    max-width: 90%;
+    margin: 5%;
+    border-radius: 5%;
+
+}
+
+a.menuF:hover {
+
+}
+

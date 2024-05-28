@@ -13,15 +13,7 @@ header {
     height: 15vh;
     background-color: sandybrown;
 }
-nav {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-nav > * {
-    color: white;
-    margin: auto 0;
-}
+
 main, section, div, a{
     width: 100%;
     display: flex;

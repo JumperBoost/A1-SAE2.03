@@ -9,24 +9,30 @@
         </header>
         <main>
             <section>
+                <h2>
+                    Nos espaces de Coworking
+                </h2>
+            </section>
+            <section>
                 <div class = "menu">
                     <?php
                         include("general/connect.php");
-                        $formules = mysqli_query($connect, "SELECT * FROM Formules");
-                    if(!count($formules)){
+                        $Salles = mysqli_query($connect, "SELECT * FROM Salles JOIN Batiments");
+                    if(!count($Salles)){
                     } else {
-                    foreach($formules as $formule):
+                    foreach($Salles as $Salle):
                     ?>
-                    <a class="menuF" href="menuF.php?idFormule=<?=$formule['idFormule']?>">
+                    <a class="menuF" href="menuF.php?idFormule=<?=$Salle['idSalle']?>">
                         <div>
-                            <div class="image"> <img class="image" src="../IMAGES/<?=$formule['imageFormule']?>.jpg"> </div>
+                            <div class="image"> <img class="image" src="../IMAGES/<?=$Salle['nomSalle']?>.jpg"> </div>
                             <div class="text">
-                                <h2><?=$formule['nomFormule']?></h2>
-                                <h3><?=$formule['prixFormule']?> €</h3>
+                                <h2><?=$Salle['nomSalle']?></h2>
+                                <h3>Capacité : <?=$Salle['capaciteSalle']?></h3>
+                                <h3><?=$Salle['prixJournnee']?> €</h3>
                                 <p>
                                     Description :
                                     <br>
-                                    <?=$formule['description']?> </p>
+                                    <?=$Salle['descriptionSalleCourte']?> </p>
                             </div>
                         </div>
                     </a>
