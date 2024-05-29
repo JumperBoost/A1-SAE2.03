@@ -9,12 +9,23 @@
         </header>
         <main>
             <section>
+                <?php
+                    include("general/connect.php");
+
+                    if(isset($_GET["idSalle"])) {
+                        $nom_Salle= $_GET["nomSalle"];
+                        $prix_Salle= $_GET["prixJournnee"];
+                        $superficie_Salle= $_GET["superficieSalle"];
+                        $Salles = mysqli_query($connect, "SELECT * FROM Salles JOIN Batiments WHERE idSalle=$id_Salle");
+                        $Salle = mysqli_fetch_array($Salles);
+                    }
+                ?>
 
                 <div>
                     <div class="text">Réservation
-                        <h1>Nom de la salle : </h1>
-                        <h2>Prix : </h2>
-                        <h2>Superficie : </h2>
+                        <h1>Nom de la salle : <?=$nom_Salle?> </h1>
+                        <h2>Prix : <?=$prix_Salle?></h2>
+                        <h2>Superficie : <?=$superficie_Salle?></h2>
                     </div>
                 </div>
             </section>
