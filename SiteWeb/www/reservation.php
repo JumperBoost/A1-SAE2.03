@@ -23,7 +23,12 @@
                     <label for="ident">Identifiant :</label>
                     <input id="ident" name="uid" type="text">
                     <label for="password">Mot de passe :</label>
-                    <input id="password" name="uid" type="text">
+                    <input id="password" name="upassword" type="password">
+                    <label for="ladate">Date de réservation :</label>
+                    <input id="ladate" name="thedate" type="date">
+                    <br>
+                    <label for="envoie">Envoie</label>
+                    <input id="envoie" type="submit">
                 </fieldset>
             </form>
         </main>
