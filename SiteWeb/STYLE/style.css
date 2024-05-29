@@ -10,7 +10,7 @@ body{
 }
 
 header {
-    height: 15vh;
+    box-sizing: content-box;
     background-color: sandybrown;
 }
 nav {
@@ -18,12 +18,20 @@ nav {
     flex-direction:row;
     width: 100%;
     padding:5px;
+    align-content: space-between;
 }
+
+
 nav .enfants {
     display: flex;
     flex-direction: row;
     justify-content:space-around;
     width:100%;
+    margin: 0 15%;
+}
+
+nav .logo {
+    margin-left:3%;
 }
 
 nav div {
@@ -36,10 +44,6 @@ nav > .enfants *{
     flex-direction: row;
 }
 
-nav > div h2:hover{
-    text-decoration: underline;
-}
-
 nav > div a {
     color: white;
     margin: auto 0;
@@ -47,7 +51,7 @@ nav > div a {
 }
 
 nav h1 {
-    font-size : 40px;
+    font-size : 35px;
     font-family: 'coffee_fills', 'Arial Black', serif;
 }
 
@@ -56,16 +60,20 @@ nav h1:hover {
 }
 
 nav img {
-    width: 5%;
+    width: 50px;
+    margin-right: 10px;
 }
 
 nav .login {
+    margin-left:10%;
+    display: inline-block;
     text-align: end;
-    flex-direction:row-reverse;
+    align-self:flex-end;
 }
 
 nav h2 {
-    font-size: 20px;
+    font-family: 'creamy_bubble', 'Arial Black', sans-serif;
+    font-size: 35px;
 }
 
 nav div h2:hover, nav img:hover{
@@ -79,6 +87,10 @@ nav h1, nav h2, nav img {
 @font-face{
     font-family: 'coffee_fills';
     src:url('Fonts/coffee_fills/Coffee Fills.ttf');
+}
+@font-face{
+    font-family: 'creamy_bubble';
+    src:url('Fonts/creamy_bubble/Creamy Bubble.otf')
 }
 
 main, section, a{
