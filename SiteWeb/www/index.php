@@ -8,11 +8,21 @@
             <?php include("general/nav.php"); $fillInTheBlanks = "";?>
         </header>
         <main>
-            <section>
-                <h2>
-                    Nos espaces de Coworking
-                </h2>
-            </section>
+            <div class="boite1">
+                <div id="Mtp">
+                    <div>
+                        <h2> Montpellier </h2>
+                        <button><a href="">Voir plus</a></button>
+                    </div>
+
+                </div>
+                <div id="Sete">
+                    <div>
+                        <h2> Sète </h2>
+                        <button><a href="">Voir plus</a></button>
+                    </div>
+                </div>
+            </div>
             <section>
                 <div class = "menu">
                     <?php

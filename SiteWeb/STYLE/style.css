@@ -2,16 +2,19 @@ title, body, header, main, footer{
     width: 100%;
     display: flex;
 }
+
 body{
     flex-direction: column;
     padding: 0;
     margin: 0;
-    background-color: beige;
+    background-color: #d0e2f5;
 }
 
 header {
     box-sizing: content-box;
-    background-color: sandybrown;
+    background-color: #5594c4;
+    z-index: 1000;
+    position: fixed;
 }
 
 /* nav */
@@ -77,7 +80,7 @@ nav h2 {
     font-size: 20px;
 }
 
-nav div h2:hover, nav img:hover{
+h2:hover, nav img:hover {
     transform: scale(1.1);
 }
 
@@ -94,26 +97,84 @@ main, section, a{
     width: 100%;
     display: flex;
 }
+main {
+    position: absolute;
+    flex-direction: column;
+    bottom:0;
+    height: 90%;
+}
 
 .boite1 {
+    position: absolute;
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;
+    height: 100%;
+    overflow-block: hidden;
+}
+
+.boite1 h2{
+    margin-right: auto;
+    margin-left: auto;
+    padding: 3px;
+    margin-top: 10%;
+    font-size: 30px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    transition: ease-in 0.2s;
 }
 
 #Mtp, #Sete {
     text-align: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#Mtp:hover div, #Sete:hover div {
+    transform: scale(1.2);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #Mtp{
-    background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,63,255,0) 50%),
-            url("../IMAGES/Fuck You.jpg");
-
+    border-right: white solid 2px;
 }
 
-#Prs{
-    background-image: url("../IMAGES/IMP.jpg");
+#Sete{
+    border-left: white solid 2px;
+}
+
+#Sete div, #Mtp div {
+    display:flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    transition: all .5s;
+}
+
+#Mtp div{
+    background-image: url("../IMAGES/imgMtp.jpg");
+    border-right: white solid 2px;
+}
+
+#Sete div{
+    background-image: url("../IMAGES/imgSete.jpg");
+    border-left: white solid 2px;
+}
+
+button {
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 div.menu {
@@ -151,5 +212,10 @@ img.image {
 
 a.menuF:hover {
 
+}
+
+.menu {
+    height: 1000px;
+    background: red;
 }
 
