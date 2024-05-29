@@ -17,26 +17,29 @@
                 <div class = "menu">
                     <?php
                         include("general/connect.php");
-                        $Salles = mysqli_query($connect, "SELECT * FROM Salles JOIN Batiments");
-                    if(!count($Salles)){
+                        $SallesM = mysqli_query($connect, "SELECT * FROM Salles NATURAL JOIN Batiments ORDER BY ville");
+                        $i = 0;
+                    if(!count($SallesM)){
                     } else {
-                    foreach($Salles as $Salle):
+
+                    foreach($SallesM as $SalleM):
                     ?>
-                    <a class="menuF" href="menuF.php?idFormule=<?=$Salle['idSalle']?>">
+                    <a class="menuF" href="menuF.php?idFormule=<?=$SalleM['idSalle']?>">
                         <div>
-                            <div class="image"> <img class="image" src="../IMAGES/<?=$Salle['nomSalle']?>.jpg"> </div>
+                            <div class="image"> <img class="image" src="../IMAGES/<?=$SalleM['nomSalle']?>.jpg"> </div>
                             <div class="text">
-                                <h2><?=$Salle['nomSalle']?></h2>
-                                <h3>Capacité : <?=$Salle['capaciteSalle']?></h3>
-                                <h3><?=$Salle['prixJournnee']?> €</h3>
+                                <h2><?=$SalleM['nomSalle']?></h2>
+                                <h3>Capacité : <?=$SalleM['capaciteSalle']?></h3>
+                                <h3><?=$SalleM['prixJournnee']?> €</h3>
                                 <p>
                                     Description :
                                     <br>
-                                    <?=$Salle['descriptionSalleCourte']?> </p>
+                                    <?=$SalleM['descriptionSalleCourte']?> </p>
                             </div>
                         </div>
                     </a>
                     <?php endforeach ;}?>
+
                 </div>
             </section>
         </main>

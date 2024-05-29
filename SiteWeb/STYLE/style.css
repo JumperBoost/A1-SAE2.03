@@ -13,6 +13,8 @@ header {
     box-sizing: content-box;
     background-color: sandybrown;
 }
+
+/* nav */
 nav {
     display: flex;
     flex-direction:row;
@@ -72,8 +74,7 @@ nav .login {
 }
 
 nav h2 {
-    font-family: 'creamy_bubble', 'Arial Black', sans-serif;
-    font-size: 35px;
+    font-size: 20px;
 }
 
 nav div h2:hover, nav img:hover{
@@ -88,15 +89,33 @@ nav h1, nav h2, nav img {
     font-family: 'coffee_fills';
     src:url('Fonts/coffee_fills/Coffee Fills.ttf');
 }
-@font-face{
-    font-family: 'creamy_bubble';
-    src:url('Fonts/creamy_bubble/Creamy Bubble.otf')
-}
 
 main, section, a{
     width: 100%;
     display: flex;
 }
+
+.boite1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#Mtp, #Sete {
+    text-align: center;
+}
+
+#Mtp{
+    background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,63,255,0) 50%),
+            url("../IMAGES/Fuck You.jpg");
+
+}
+
+#Prs{
+    background-image: url("../IMAGES/IMP.jpg");
+}
+
 div.menu {
     flex-direction: row;
     flex-wrap: wrap;

@@ -10,21 +10,16 @@
         <main>
             <section class="formule">
                 <?php
-                include("general/connect.php");
+                    include("general/connect.php");
 
-                if(isset($_GET["idSalle"])) {
-                    $idSalle= $_GET["idSalle"];
-                    $Salles = mysqli_query($connect, "SELECT * FROM Salle WHERE idSalle = $idSalle ");
-                    $Salle = mysqli_fetch_array($Salles);
-                }
+                    if(isset($_GET["idSalle"])) {
+                        $id_Salle= $_GET["idSalle"];
+                        $Salles = mysqli_query($connect, "SELECT * FROM Salles JOIN Batiments WHERE idSalle=$id_Salle");
+                        $Salle = mysqli_fetch_array($Salles);
+                    }
                 ?>
                 <div class="formule-menu">
-                    <h1><?=$Salle['nomSalle']?></h1>
-                    <div class="info">
-                        <div class="image-f">
-                            <img src="../IMAGES/<?=$Salle['nomSalle']?>.jpg">
-                        </div>
-                    </div>
+                    <h1><?=$Salle['idSalle']?></h1>
                 </div>
 
             </section>
