@@ -24,6 +24,7 @@ nav {
     width: 100%;
     padding:5px;
     align-content: space-between;
+    position: sticky;
 }
 
 
@@ -78,9 +79,10 @@ nav .login {
 
 nav h2 {
     font-size: 20px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
-h2:hover, nav img:hover {
+nav h2:hover, nav img:hover, .boite1 button:hover {
     transform: scale(1.1);
 }
 
@@ -116,7 +118,7 @@ main {
 .boite1 h2{
     margin-right: auto;
     margin-left: auto;
-    padding: 3px;
+    padding: 10px;
     margin-top: 10%;
     font-size: 30px;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
@@ -133,11 +135,11 @@ main {
 }
 
 #Mtp:hover div, #Sete:hover div {
-    transform: scale(1.2);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+    transform: scale(1.1);
+}
+
+#Mtp:hover h2, #Sete:hover h2 {
+    text-decoration: underline;
 }
 
 #Mtp{
@@ -148,15 +150,43 @@ main {
     border-left: white solid 2px;
 }
 
-#Sete div, #Mtp div {
+.boite1 a {
+    text-decoration: none;
+    -webkit-text-fill-color: black;
+    font-family: inherit;
+}
+
+.boite1 button {
+    transition: all .2s;
+}
+
+.effect {
     display:flex;
     flex-direction: column;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
     background-size: cover;
     height: 100%;
+    width: 100%;
     transition: all .5s;
+}
+.effect * {
+    z-index: 100;
+}
+.effect::before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 25%;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#Sete:hover div:before, #Mtp:hover div:before {
+    display:block;
 }
 
 #Mtp div{

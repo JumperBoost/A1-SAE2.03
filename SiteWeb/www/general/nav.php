@@ -8,7 +8,8 @@ $fillInTheBlanks = ""; ?>
     <div class="enfants">
         <h2><a href="">Nos espaces de coworking</a></h2>
         <h2><a href="">Nos offres</a></h2>
-        <h2><a href="">Nous contacter</a></h2>
+        <h2><a href="">Réserver</a></h2>
+        <h2><a href="../reservation.php">Nous contacter</a></h2>
     </div>
     <div class="login">
         <a href="">
