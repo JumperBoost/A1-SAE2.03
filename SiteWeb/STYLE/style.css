@@ -1,4 +1,4 @@
-title, body, header, main, footer{
+title, body, nav, header, main, footer{
     width: 100%;
     display: flex;
 }
@@ -17,11 +17,13 @@ header {
     position: fixed;
 }
 
+h2 {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
 /* nav */
 nav {
-    display: flex;
     flex-direction:row;
-    width: 100%;
     padding:5px;
     align-content: space-between;
     position: sticky;
@@ -100,19 +102,28 @@ main, section, a{
     display: flex;
 }
 main {
+
     position: absolute;
     flex-direction: column;
     bottom:0;
     height: 90%;
 }
 
-.boite1 {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
+.section1 {
     width: 100%;
     height: 100%;
+    position:absolute;;
+}
+.section2 {
+    margin-top:100vh;
+    width:100%;
+}
+
+.boite1 {
+    display: flex;
+    flex-direction: row;
     overflow-block: hidden;
+    width:100%;
 }
 
 .boite1 h2{
@@ -185,6 +196,21 @@ main {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
+.formule-menu {
+    margin: 5%;
+    margin-top: 80px;
+}
+
+.formule-menu div {
+    display: flex;
+}
+
+.formule-menu fieldset {
+    display: flex;
+    flex-direction: column;
+
+}
+
 #Sete:hover div:before, #Mtp:hover div:before {
     display:block;
 }
@@ -207,17 +233,33 @@ button {
     border-radius: 15px;
 }
 
-div.menu {
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-div.menu > a {
-    width: 50%;
-}
-a.menuF > div{
-    margin: 5%;
+/*section 2*/
+
+.section2 a {
     text-decoration: none;
-    border-radius: 5%;
+}
+
+.section2 h2, .section2 h3, .section2 p {
+    -webkit-text-fill-color: black;
+}
+
+div.menu > a {
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.donnees {
+    background-color: #5594c4;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+a.menuF > div{
+    margin: 2% 5%;
+    text-decoration: none;
+    border-radius: 10px;
     background-color: white;
     width: 100%;
     flex-direction: row;
@@ -226,26 +268,29 @@ a.menuF > div{
 div.text{
     flex-direction: column;
     width: 50%;
-
-
+    padding-left: 10px;
+    z-index: 10;
+    background-color: white;
+}
+div.text * {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 div.image {
     max-width: 50%;
-
+    height: 100%;
 }
+
 img.image {
-    max-width: 90%;
-    margin: 5%;
-    border-radius: 5%;
-
+    max-width: 100%;
+    height: 100%;
+    transition: all 0.3s;
 }
 
-a.menuF:hover {
-
+.image:hover {
+    transform: scale(1.1);
 }
 
-.menu {
-    height: 1000px;
-    background: red;
+#offre {
+    margin-top: 0;
 }
 

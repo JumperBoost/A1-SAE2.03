@@ -13,7 +13,7 @@
             Nos salles de Coworking
         </h2>
     </section>
-    <section>
+    <section class="section2" id="offre">
         <div class = "menu">
             <?php
             include("general/connect.php");
@@ -23,7 +23,7 @@
                     ?>
 
                     <a class="menuF" href="menuF.php?idSalle=<?=$Salle['idSalle']?>">
-                        <div>
+                        <div class="donnees">
                             <div class="image"> <img class="image" src="../IMAGES/<?=$Salle['nomSalle']?>.jpg"> </div>
                             <div class="text">
                                 <h2><?=$Salle['nomSalle']?></h2>

@@ -26,18 +26,18 @@
                         $nbBatiment = $nbBatiment+1;
                     endforeach;
                     ?>
-            <div>
-                        <h1>Batiment : <?=$Batiment['nomBatiment']?></h1>
-                        <div class="image"> <img class="image" src="../IMAGES/<?=$Batiment['nomBatiment']?>.jpg"> </div>
-                        <div class="text">
-                            <h3><?=$Batiment['ville']?></h3>
-                            <h3>nombres de Salles : <?=$nbBatiment?></h3>
-                            <p>
-                                Description :
-                                <br>
-                                <?=$Batiment['descriptionBatiment']?> </p>
-                        </div>
-                    </div>
+            <div class="donnees">
+                <h1>Batiment : <?=$Batiment['nomBatiment']?></h1>
+                <div class="image"> <img class="image" src="../IMAGES/<?=$Batiment['nomBatiment']?>.jpg"> </div>
+                <div class="text">
+                    <h3><?=$Batiment['ville']?></h3>
+                    <h3>nombres de Salles : <?=$nbBatiment?></h3>
+                    <p>
+                        Description :
+                        <br>
+                        <?=$Batiment['descriptionBatiment']?> </p>
+                </div>
+            </div>
                 <?php endforeach ;}?>
         </div>
     </section>

@@ -10,17 +10,24 @@
 <main>
     <section>
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=sae;charset=utf8;', 'root', 'root');
-include("general/connect.php");
+$conn = new mysqli("localhost", "root", "root", "sae");
+if ($conn -> connect_error) {
+    die("Erreur :" . $conn -> connect_error);
+}
 if(isset($_POST['envoi'])){
     if (!empty($_POST['Nom']) and !empty($_POST['Prenom']) and !empty($_POST['Tel']) and !empty($_POST['Mdp'])){
         $nomCoworker = htmlspecialchars($_POST['Nom']);
-        $prenomCoworker= htmlspecialchars($_POST['Prenom']);
+        $prenomCoworker = htmlspecialchars($_POST['Prenom']);
         $tel = htmlspecialchars($_POST['Tel']);
-        $codeSecret = sha1($_POST['Mdp']);
-        $insertUser = $bdd->prepare('INSERT INTO coworkers(nomCoworker, prenomCoworker, tel, codeSecret)VALUES( ?, ?, ?, ?)');
-        $insertUser -> execute(array($nomCoworker, $prenomCoworker, $tel, $codeSecret));
+        $codeSecret = htmlspecialchars($_POST['Mdp']);
+        $sql = "INSERT INTO Coworkers (`nomCoworker`, `prenomCoworker`, `tel`, `codeSecret`) VALUES('$nomCoworker', '$prenomCoworker', '$tel', '$codeSecret')";
 
+        if (mysqli_query($conn, $sql)){
+            echo "<h1>toutes les informations ont été completer <br>Bienvenue $nomCoworker</h1>";
+        } else {
+            echo $sql;
+        }
+        $conn -> close();
     }else {
         echo "<h1>toutes les informations n'ont pas été completer</h1>";
     }
