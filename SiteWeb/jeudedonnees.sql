@@ -50,13 +50,17 @@ CREATE TABLE Avis (
 INSERT INTO Coworkers (nomCoworker, prenomCoworker, tel, codeSecret)
 VALUES ('Bigard', 'Jean-Marie', '0616379573', '696969');
 
-INSERT INTO Batiments (nomBatiment, ville, descriptionBatiment)
-VALUES ('K', 'Montpelier', 'Batiment orné de la lettre K');
+INSERT INTO Batiments (idBatiment, nomBatiment, ville, descriptionBatiment)
+VALUES (1, 'K', 'Montpellier', 'Batiment orné de la lettre K');
 
-INSERT INTO Batiments (nomBatiment, ville, descriptionBatiment)
-VALUES ('02', 'Sete', 'Batiment orné du chiffre 02');
+INSERT INTO Batiments (idBatiment,nomBatiment, ville, descriptionBatiment)
+VALUES (2, '02', 'Sete', 'Batiment orné du chiffre 02');
 
 INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournnee, idBatiment, descriptionSalleCourte, descriptionSalle)
-VALUES ('Fuck You', 30, 8, 79.99, 0, 'Salle parfaite pour travaillé au calme ...', 'Je suis une description longue');
+VALUES ('Give and Take', 30, 8, 79.99, 1, 'Salle parfaite pour travaillé au calme ...', 'Je suis une description longue');
 INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournnee, idBatiment, descriptionSalleCourte, descriptionSalle)
-VALUES ('IMP', 32, 8, 84.99, 1, 'Salle spatieuse ...', 'Je suis une description longue');
+VALUES ('Stayed Gone', 15, 4, 40, 1, 'Salle parfaite pour travaillé au calme ...', 'Je suis une description longue');
+INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournnee, idBatiment, descriptionSalleCourte, descriptionSalle)
+VALUES ('Let\'s Go!', 60, 16, 99.99, 2, 'Salle spatieuse ...', 'Je suis une description longue');
+INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournnee, idBatiment, descriptionSalleCourte, descriptionSalle)
+VALUES ('Must Have Been the Wind', 10, 3, 50, 2, 'Salle spatieuse ...', 'Je suis une description longue');

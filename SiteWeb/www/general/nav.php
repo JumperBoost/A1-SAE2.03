@@ -6,13 +6,12 @@ $fillInTheBlanks = ""; ?>
         <h1><a href="index.php">Coworkers.net</a></h1>
     </div>
     <div class="enfants">
-        <h2><a href="">Nos espaces de coworking</a></h2>
-        <h2><a href="">Nos offres</a></h2>
-        <h2><a href="">Réserver</a></h2>
-        <h2><a href="../reservation.php">Nous contacter</a></h2>
+        <h2><a href="espace.php">Nos espaces de coworking</a></h2>
+        <h2><a href="offre.php">Nos offres</a></h2>
+        <h2><a href="reservation.php">Reservation</a></h2>
     </div>
     <div class="login">
-        <a href="">
+        <a href="connection.php">
             <img src="../STYLE/icons/login.png"  alt="login image"/>
         </a>
     </div>
