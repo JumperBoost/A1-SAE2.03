@@ -29,8 +29,8 @@
                 <div class = "menu">
                     <?php
                         include("general/connect.php");
-                        if(isset($_GET["idVille"])) {
-                            $Salles = mysqli_query($connect, "SELECT * FROM salles JOIN batiments on salles.idBatiment = batiments.idBatiment");
+                        if(isset($_GET['idVille'])) {
+                            $Salles = mysqli_query($connect, "SELECT * FROM salles JOIN batiments on salles.idBatiment = batiments.idBatiment WHERE ville = '$_GET[idVille]'");
                             if(count($Salles)){
                                 foreach($Salles as $Salle):
                                 ?>
