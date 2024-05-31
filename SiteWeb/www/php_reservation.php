@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <?php include("general/head.php");

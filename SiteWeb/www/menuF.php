@@ -30,12 +30,12 @@
                         <h2>Capacité : <?= $Salle['capaciteSalle'] ?></h2>
                     </div>
 
-                </div>
-                <p>
-                    Description :
-                    <br>
-                    <?= $Salle['descriptionSalle'] ?>
-                </p>
+                    </div>
+                    <p>
+                        Description :
+                        <br>
+                        <?=$Salle['descriptionSalle']?>
+                    </p>
                 <form action="php_reservation.php" method="post">
                     <fieldset>
                         <h2>Réservation</h2>
@@ -59,7 +59,7 @@
                         <select id="ladate" name="date" required>
                             <option value="">--Veuillez choisir une date--</option>
                             <?php foreach ($sel as $date): ?>
-                            <option value="<?= $date["selected_date"] ?>"><?= $date["selected_date"] ?></option>
+                                <option value="<?= $date["selected_date"] ?>"><?= $date["selected_date"] ?></option>
                             <?php endforeach ;?>
                         </select>
                         <br>
