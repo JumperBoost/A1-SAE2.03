@@ -8,48 +8,47 @@
             <?php include("general/nav.php"); $fillInTheBlanks = "";?>
         </header>
         <main>
-            <section class="section1">
+            <section id="section1">
             <div class="boite1">
                 <div id="Mtp">
                     <div class="effect">
-                        <h2> Montpellier </h2>
-                        <a href="index.php?idVille=<?="Montpellier"?>"><button>Voir plus</button></a>
+                        <h2>Montpellier</h2>
+                        <button><a href="index.php?idVille=Montpellier#section2">Voir plus</a></button>
                     </div>
 
                 </div>
                 <div id="Sete">
                     <div class="effect">
-                        <h2> Sète </h2>
-                        <button><a href="index.php?idVille=<?="Sete"?>">Voir plus</a></button>
+                        <h2>Sète</h2>
+                        <button><a href="index.php?idVille=Sete#section2">Voir plus</a></button>
                     </div>
                 </div>
             </div>
             </section>
-            <section class="section2">
-                <div class = "menu">
+            <section id="section2">
+                <div class="menu">
                     <?php
-                        include("general/connect.php");
                         if(isset($_GET['idVille'])) {
-                            $Salles = mysqli_query($connect, "SELECT * FROM salles JOIN batiments on salles.idBatiment = batiments.idBatiment WHERE ville = '$_GET[idVille]'");
-                            if(count($Salles)){
-                                foreach($Salles as $Salle):
-                                ?>
-                                <a class="menuF" href="menuF.php?idSalle=<?=$Salle['idSalle']?>">
-                                    <div class="donnees">
-                                        <div class="image"> <img class="image" src="../IMAGES/<?=$Salle['nomSalle']?>.jpg"> </div>
-                                        <div class="text">
-                                            <h2><?=$Salle['nomSalle']?></h2>
-                                            <h3>Capacité : <?=$Salle['capaciteSalle']?></h3>
-                                            <h3><?=$Salle['prixJournnee']?> €</h3>
-                                            <p>
-                                                Description :
-                                                <br>
-                                                <?=$Salle['descriptionSalleCourte']?> </p>
-                                        </div>
+                            global $db; include("general/connect.php");
+                            $Salles = $db->query("SELECT * FROM Salles s JOIN Batiments b on s.idBatiment = b.idBatiment WHERE ville = '$_GET[idVille]'");
+                            foreach($Salles as $Salle): ?>
+                            <a class="menuF" href="menuF.php?idSalle=<?=$Salle['idSalle']?>">
+                                <div class="donnees">
+                                    <div class="image"> <img class="image" src="../IMAGES/<?=$Salle['nomSalle']?>.jpg"> </div>
+                                    <div class="text">
+                                        <h2><?=$Salle['nomSalle']?></h2>
+                                        <h3>Capacité : <?=$Salle['capaciteSalle']?></h3>
+                                        <h3><?=$Salle['prixJournnee']?> €</h3>
+                                        <p>
+                                            Description :
+                                            <br>
+                                            <?=$Salle['descriptionSalleCourte']?>
+                                        </p>
                                     </div>
-                                </a>
-                        <?php endforeach ;}?>
-                    <?php }?>
+                                </div>
+                            </a>
+                            <?php endforeach;
+                        }?>
                 </div>
             </section>
         </main>

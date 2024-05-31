@@ -15,28 +15,25 @@
     </section>
     <section class="section2" id="offre">
         <div class = "menu">
-            <?php
+            <?php global $db;
             include("general/connect.php");
-            $Salles = mysqli_query($connect, "SELECT * FROM sae.salles ORDER BY prixJournnee DESC ");
-            if(count($Salles)){
-                foreach($Salles as $Salle):
-                    ?>
-
-                    <a class="menuF" href="menuF.php?idSalle=<?=$Salle['idSalle']?>">
-                        <div class="donnees">
-                            <div class="image"> <img class="image" src="../IMAGES/<?=$Salle['nomSalle']?>.jpg"> </div>
-                            <div class="text">
-                                <h2><?=$Salle['nomSalle']?></h2>
-                                <h3>Capacité : <?=$Salle['capaciteSalle']?></h3>
-                                <h3><?=$Salle['prixJournnee']?> €</h3>
-                                <p>
-                                    Description :
-                                    <br>
-                                    <?=$Salle['descriptionSalleCourte']?> </p>
-                            </div>
+            $Salles = $db->query("SELECT * FROM Salles ORDER BY prixJournnee DESC");
+                foreach($Salles as $Salle): ?>
+                <a class="menuF" href="menuF.php?idSalle=<?=$Salle['idSalle']?>">
+                    <div class="donnees">
+                        <div class="image"> <img class="image" src="../IMAGES/<?=$Salle['nomSalle']?>.jpg"> </div>
+                        <div class="text">
+                            <h2><?=$Salle['nomSalle']?></h2>
+                            <h3><?=$Salle['superficieSalle']?> m² • <?=$Salle['prixJournnee']?> €</h3>
+                            <h3>Capacité : <?=$Salle['capaciteSalle']?></h3>
+                            <p>
+                                Description :
+                                <br>
+                                <?=$Salle['descriptionSalleCourte']?> </p>
                         </div>
-                    </a>
-                <?php endforeach ;}?>
+                    </div>
+                </a>
+                <?php endforeach ;?>
         </div>
     </section>
 </main>

@@ -14,22 +14,22 @@
                     <form action="php_inscription.php" method="post">
                         <div>
                             <p> Nom </p>
-                            <input type="Nom" name="Nom"  required="required" autocomplete="off">
+                            <input type="text" name="nom" required autocomplete="off">
                         </div>
 
                         <div>
                             <p> Prenom </p>
-                            <input type="Prenom" name="Prenom" required="required" autocomplete="off">
+                            <input type="text" name="prenom" required autocomplete="off">
                         </div>
 
                         <div>
-                            <p> Tel </p>
-                            <input type="Tel" name="Tel" required="required" autocomplete="off">
+                            <p> Téléphone </p>
+                            <input type="tel" name="tel" required autocomplete="off">
                         </div>
 
                         <div>
-                            <p> codeSecret </p>
-                            <input type="Mdp" name="Mdp" required="required" autocomplete="off">
+                            <p> Code Secret </p>
+                            <input type="number" name="code" required autocomplete="off">
                         </div>
                         <input type="submit" value="Inscription" name='envoi'>
                     </form>
