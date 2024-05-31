@@ -33,6 +33,7 @@
                 echo "<h1>Toutes les informations n'ont pas été completés</h1>";
             }
         } ?>
+        <meta http-equiv="refresh" content="5;index.php"
     </section>
 </main>
 <footer>

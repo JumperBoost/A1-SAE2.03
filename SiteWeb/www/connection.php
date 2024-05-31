@@ -28,8 +28,8 @@
                         </div>
 
                         <div>
-                            <p> codeSecret </p>
-                            <input name="code" type="password" required="required" autocomplete="off">
+                            <p> Code Secret </p>
+                            <input type="password" name="code" required autocomplete="off">
                         </div>
                         <input type="submit" value="Inscription" name='envoi'>
                     </form>

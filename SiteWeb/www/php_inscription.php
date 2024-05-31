@@ -23,9 +23,8 @@
                     $sql = "INSERT INTO Coworkers (`nomCoworker`, `prenomCoworker`, `tel`, `codeSecret`) VALUES('$nomCoworker', '$prenomCoworker', '$tel', '$codeSecret')";
 
                     if ($db->query($sql)) {
-                        $id =  $db->query("SELECT idCoworker From Coworkers ORDER BY idCoworker DESC LIMIT 0, 1");
-                        $i = $id ->fetch();
-                        echo "<h1>Toutes les informations ont été completés. <br>Bienvenue $nomCoworker $prenomCoworker. <br> Votre identifient est $i[idCoworker]</h1>";
+                        $id =  $db->query("SELECT idCoworker From Coworkers ORDER BY idCoworker DESC LIMIT 0, 1")->fetch();
+                        echo "<h1>Toutes les informations ont été completés. <br>Bienvenue $nomCoworker $prenomCoworker. <br> Votre identifiant est $id[idCoworker]</h1>";
                     } else {
                         echo $sql;
                     }

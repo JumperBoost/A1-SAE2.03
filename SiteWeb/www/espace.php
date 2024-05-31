@@ -19,18 +19,21 @@
             foreach($Batiments as $Batiment):
                 $Salles = $db->query("SELECT * FROM Salles WHERE idBatiment = $Batiment[idBatiment]");
                 $nbSalles = $db->query("SELECT COUNT(*) AS nbSalles FROM Salles WHERE idBatiment='$Batiment[idBatiment]';")->fetch()["nbSalles"]; ?>
-            <div class="donnees">
-                <h1>Batiment : <?=$Batiment['nomBatiment']?></h1>
-                <div class="image"> <img class="image" src="../IMAGES/<?=$Batiment['nomBatiment']?>.jpg"> </div>
-                <div class="text">
-                    <h3><?=$Batiment['ville']?></h3>
-                    <h3>Nombres de Salles : <?=$nbSalles?></h3>
-                    <p>
-                        Description :
-                        <br>
-                        <?=$Batiment['descriptionBatiment']?> </p>
+            <a class="menuF">
+                <div class="donnees">
+
+                    <div class="image"> <img class="image" src="../IMAGES/<?=$Batiment['nomBatiment']?>.jpg"> </div>
+                    <div class="text">
+                        <h1>Batiment : <?=$Batiment['nomBatiment']?></h1>
+                        <h3><?=$Batiment['ville']?></h3>
+                        <h3>Nombres de Salles : <?=$nbSalles?></h3>
+                        <p>
+                            Description :
+                            <br>
+                            <?=$Batiment['descriptionBatiment']?> </p>
+                    </div>
                 </div>
-            </div>
+            </a>
                 <?php endforeach ;?>
         </div>
     </section>

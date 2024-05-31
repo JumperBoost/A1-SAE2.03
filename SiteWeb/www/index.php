@@ -14,6 +14,15 @@
                     <div class="effect">
                         <h2>Montpellier</h2>
                         <button><a href="index.php?idVille=Montpellier#section2">Voir plus</a></button>
+                        <?php global $db;
+                        include("general/connect.php");
+                        $nbSallesBatiment = $db->query("SELECT COUNT(*) AS nbSalles FROM Salles WHERE idBatiment=1;")->fetch()["nbSalles"];
+                        $nbPlacesBatiment = $db->query("SELECT SUM(capaciteSalle) AS nbPlaces FROM Salles WHERE idBatiment=1;")->fetch()["nbPlaces"];
+                        ?>
+                        <div>
+                            <h4>Il y a <?= $nbPlacesBatiment ?> places libres dans <?= $nbSallesBatiment ?> salle(s)</h4>
+                        </div>
+                        
                     </div>
 
                 </div>
@@ -21,6 +30,14 @@
                     <div class="effect">
                         <h2>Sète</h2>
                         <button><a href="index.php?idVille=Sete#section2">Voir plus</a></button>
+                        <?php global $db;
+                        include("general/connect.php");
+                        $nbSallesBatiment = $db->query("SELECT COUNT(*) AS nbSalles FROM Salles WHERE idBatiment=2;")->fetch()["nbSalles"];
+                        $nbPlacesBatiment = $db->query("SELECT SUM(capaciteSalle) AS nbPlaces FROM Salles WHERE idBatiment=2;")->fetch()["nbPlaces"];
+                        ?>
+                        <div>
+                            <h4>Il y a <?= $nbPlacesBatiment ?> places libres dans <?= $nbSallesBatiment ?> salle(s)</h4>
+                        </div>
                     </div>
                 </div>
             </div>
