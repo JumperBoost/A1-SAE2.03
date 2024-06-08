@@ -51,7 +51,7 @@
                             foreach($Salles as $Salle): ?>
                             <a class="menuF" href="menuF.php?idSalle=<?=$Salle['idSalle']?>">
                                 <div class="donnees">
-                                    <div class="image"> <img class="image" src="../IMAGES/<?=$Salle['nomSalle']?>.jpg"> </div>
+                                    <div class="image"> <img class="image" src="img/<?=$Salle['nomSalle']?>.jpg"> </div>
                                     <div class="text">
                                         <h2><?=$Salle['nomSalle']?></h2>
                                         <h3>Capacité : <?=$Salle['capaciteSalle']?></h3>

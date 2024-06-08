@@ -97,7 +97,7 @@ nav h1, nav h2, nav img {
 
 @font-face{
     font-family: 'coffee_fills';
-    src:url('Fonts/coffee_fills/Coffee Fills.ttf');
+    src:url('../fonts/coffee_fills/Coffee Fills.ttf');
 }
 
 main, section, a{
@@ -253,12 +253,12 @@ main {
 }
 
 #Mtp .effect {
-    background-image: url("../IMAGES/imgMtp.jpg");
+    background-image: url("../img/imgMtp.jpg");
     border-right: white solid 2px;
 }
 
 #Sete .effect {
-    background-image: url("../IMAGES/imgSete.jpg");
+    background-image: url("../img/imgSete.jpg");
     border-left: white solid 2px;
 }
 

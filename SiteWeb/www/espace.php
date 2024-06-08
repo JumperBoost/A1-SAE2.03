@@ -22,7 +22,7 @@
             <a class="menuF">
                 <div class="donnees">
 
-                    <div class="image"> <img class="image" src="../IMAGES/<?=$Batiment['nomBatiment']?>.jpg"> </div>
+                    <div class="image"> <img class="image" src="img/<?=$Batiment['nomBatiment']?>.jpg"> </div>
                     <div class="text">
                         <h1>Batiment : <?=$Batiment['nomBatiment']?></h1>
                         <h3><?=$Batiment['ville']?></h3>

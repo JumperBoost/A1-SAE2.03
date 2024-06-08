@@ -12,7 +12,7 @@ $fillInTheBlanks = ""; ?>
     </div>
     <div class="login">
         <a href="connection.php">
-            <img src="../STYLE/icons/login.png"  alt="login image"/>
+            <img src="icons/login.png"  alt="login image"/>
         </a>
     </div>
 </nav>

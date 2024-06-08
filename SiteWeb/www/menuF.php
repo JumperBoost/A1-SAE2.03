@@ -21,7 +21,7 @@
             <div class="formule-menu">
                 <h1>⇒ <?= $Salle['nomSalle'] ?></h1>
                 <div class="donnees">
-                    <div class="image"><img class="image" src="../IMAGES/<?= $Salle['nomSalle'] ?>.jpg"></div>
+                    <div class="image"><img class="image" src="img/<?= $Salle['nomSalle'] ?>.jpg"></div>
 
                     <div class="text">
                         <h2><?= $Salle['superficieSalle'] ?> m² • <?= $Salle['prixJournnee'] ?> €</h2>
