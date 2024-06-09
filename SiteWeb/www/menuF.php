@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
+<?php global $db, $idSalle, $Salles, $Salle;
+include("general/connect.php");
+if (isset($_GET["idSalle"])) {
+    $id_Salle = $_GET["idSalle"];
+    $Salles = $db->query("SELECT * FROM Salles s JOIN Batiments b On s.idBatiment = b.idBatiment WHERE idSalle = '$id_Salle'");
+    $Salle = $Salles->fetch();
+}?>
+
 <head>
     <?php include("general/head.php");
     $fillInTheBlanks = ""; ?>
+    <title><?= $Salle['nomSalle'] ?> - Coworkers.net</title>
 </head>
 <body>
 <header>
@@ -11,13 +20,8 @@
 </header>
 <main>
     <section class="formule">
-        <?php global $db, $sel;
-        include("general/connect.php");
-        if (isset($_GET["idSalle"])) {
-            $id_Salle = $_GET["idSalle"];
-            $Salles = $db->query("SELECT * FROM Salles s JOIN Batiments b On s.idBatiment = b.idBatiment WHERE idSalle = '$id_Salle'");
-            $Salle = $Salles->fetch();
-            ?>
+        <?php global $sel;
+        if (isset($_GET["idSalle"])) {?>
             <div class="formule-menu">
                 <h1>⇒ <?= $Salle['nomSalle'] ?></h1>
                 <div class="donnees">

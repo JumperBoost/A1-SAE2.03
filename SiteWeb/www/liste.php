@@ -3,6 +3,7 @@
 <head>
     <?php include("general/head.php");
     $fillInTheBlanks = ""; ?>
+    <title>Utilisateurs - Coworkers.net</title>
 </head>
 <body>
 <header>

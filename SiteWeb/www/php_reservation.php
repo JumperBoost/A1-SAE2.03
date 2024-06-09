@@ -2,6 +2,7 @@
 <head>
     <?php include("general/head.php");
     $fillInTheBlanks = ""; ?>
+    <title>Réservation - Coworkers.net</title>
 </head>
 <body>
 <header>
@@ -28,7 +29,7 @@
                         $prenomWorker = $worker["prenomCoworker"];
                         echo "<h1>Réservation de la salle $nomSalle pour le $date effectuée pour $nomWorker $prenomWorker.</h1>";
                     } else echo "<h1>Une erreur est survenue lors de la réservation de la salle id $idSalle.</h1>";
-                } else echo "<h1>L'identifiant ou le mot de passe de l'utilisateur est invalide. Veuillez réessayer avec des informations correctes.</h1>";
+                } else echo "<h1>L'identifiant ou le code secret de l'utilisateur est invalide. Veuillez réessayer avec des informations correctes.</h1>";
             } else {
                 echo "<h1>Toutes les informations n'ont pas été completés</h1>";
             }

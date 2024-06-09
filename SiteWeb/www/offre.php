@@ -2,6 +2,7 @@
 <html>
 <head>
     <?php include("general/head.php"); $fillInTheBlanks = "";?>
+    <title>Offres - Coworkers.net</title>
 </head>
 <body>
 <header>
