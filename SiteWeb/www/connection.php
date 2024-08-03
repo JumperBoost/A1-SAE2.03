@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <?php include("general/head.php"); $fillInTheBlanks = "";?>
+        <?php require 'general/head.php' ?>
         <title>Inscription - Coworkers.net</title>
     </head>
     <body>
     <header>
-        <?php include("general/nav.php"); $fillInTheBlanks = "";?>
+        <?php require 'general/nav.php' ?>
     </header>
         <main>
             <section>
@@ -38,7 +38,7 @@
             </section>
         </main>
         <footer>
-            <?php include("general/footer.php"); $fillInTheBlanks = "";?>
+            <?php require 'general/footer.php' ?>
         </footer>
     </body>
 </html>

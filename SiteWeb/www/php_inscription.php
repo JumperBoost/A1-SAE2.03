@@ -1,30 +1,31 @@
+<?php require_once 'general/database.php' ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <?php include("general/head.php");
-    $fillInTheBlanks = ""; ?>
+    <?php require 'general/head.php'  ?>
     <title>Inscription - Coworkers.net</title>
 </head>
 <body>
 <header>
-    <?php include("general/nav.php");
-    $fillInTheBlanks = ""; ?>
+    <?php require 'general/nav.php' ?>
 </header>
 <main>
     <section>
         <?php
         if(isset($_POST['envoi'])) {
             if (!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['tel']) and !empty($_POST['code'])) {
-                global $db; include("general/connect.php");
                 $nomCoworker = htmlspecialchars($_POST['nom']);
                 $prenomCoworker = htmlspecialchars($_POST['prenom']);
                 $tel = htmlspecialchars($_POST['tel']);
                 $codeSecret = htmlspecialchars($_POST['code']);
-                if($db->query("SELECT * FROM Coworkers WHERE nomCoworker='$nomCoworker' AND prenomCoworker='$prenomCoworker';")->rowCount() == 0) {
-                    $sql = "INSERT INTO Coworkers (`nomCoworker`, `prenomCoworker`, `tel`, `codeSecret`) VALUES('$nomCoworker', '$prenomCoworker', '$tel', '$codeSecret')";
+                $values = ['nomCoworkerTag' => $nomCoworker, 'prenomCoworkerTag' => $prenomCoworker];
+                if(Database::safe_execute("SELECT * FROM Coworkers WHERE nomCoworker=:nomCoworkerTag AND prenomCoworker=:prenomCoworkerTag", $values)->rowCount() == 0) {
+                    $sql = "INSERT INTO Coworkers (`nomCoworker`, `prenomCoworker`, `tel`, `codeSecret`) VALUES(:nomCoworkerTag, :prenomCoworkerTag, :telTag, :codeSecretTag)";
+                    $values += ['telTag' => $tel, 'codeSecretTag' => $codeSecret];
 
-                    if ($db->query($sql)) {
-                        $id =  $db->query("SELECT idCoworker From Coworkers ORDER BY idCoworker DESC LIMIT 0, 1")->fetch();
+                    if (Database::attempt_safe_execute($sql, $values)) {
+                        $id = Database::execute("SELECT idCoworker From Coworkers ORDER BY idCoworker DESC LIMIT 0, 1")->fetch();
                         echo "<h1>Toutes les informations ont été completés. <br>Bienvenue $nomCoworker $prenomCoworker. <br> Votre identifiant est $id[idCoworker]</h1>";
                     } else {
                         echo $sql;
@@ -38,8 +39,7 @@
     </section>
 </main>
 <footer>
-    <?php include("general/footer.php");
-    $fillInTheBlanks = ""; ?>
+    <?php require 'general/footer.php' ?>
 </footer>
 </body>
 </html>

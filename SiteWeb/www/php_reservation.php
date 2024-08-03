@@ -1,30 +1,31 @@
-<html>
+<?php require_once 'general/database.php' ?>
+
+<html lang="fr">
 <head>
-    <?php include("general/head.php");
-    $fillInTheBlanks = ""; ?>
+    <?php require 'general/head.php' ?>
     <title>Réservation - Coworkers.net</title>
 </head>
 <body>
 <header>
-    <?php include("general/nav.php");
-    $fillInTheBlanks = ""; ?>
+    <?php require 'general/nav.php' ?>
 </header>
 <main>
     <section>
         <?php
         if(isset($_POST['envoi'])) {
             if (!empty($_POST['idSalle']) and !empty($_POST['idWorker']) and !empty($_POST['code']) and !empty($_POST['date'])) {
-                global $db; include("general/connect.php");
                 $idSalle = htmlspecialchars($_POST['idSalle']);
                 $idWorker = htmlspecialchars($_POST['idWorker']);
                 $codeSecret = htmlspecialchars($_POST['code']);
                 $date = htmlspecialchars($_POST['date']);
 
-                if($db->query("SELECT * FROM Coworkers WHERE idCoworker='$idWorker' AND codeSecret='$codeSecret';")->rowCount() == 1) {
-                    if ($db->query("SELECT * FROM Reservations WHERE idSalle='$idSalle' AND dateReservation='$date';")->rowCount() == 0) {
-                        $db->query("INSERT INTO Reservations VALUES ('$idWorker', '$idSalle', '$date');");
-                        $nomSalle = $db->query("SELECT nomSalle FROM Salles WHERE idSalle='$idSalle';")->fetch()["nomSalle"];
-                        $worker = $db->query("SELECT * FROM Coworkers WHERE idCoworker='$idWorker';")->fetch();
+                $values = ['idWorkerTag' => $idWorker, 'codeSecretTag' => $codeSecret];
+                if(Database::safe_execute("SELECT * FROM Coworkers WHERE idCoworker=:idWorkerTag AND codeSecret=:codeSecretTag", $values)->rowCount() == 1) {
+                    $values += ['idSalleTag' => $idSalle, 'dateTag' => $date];
+                    if (Database::safe_execute("SELECT * FROM Reservations WHERE idSalle=:idSalleTag AND dateReservation=:dateTag", $values)->rowCount() == 0) {
+                        Database::safe_execute("INSERT INTO Reservations VALUES (:idWorkerTag, :idSalleTag, :dateTag)", $values);
+                        $nomSalle = Database::safe_execute("SELECT nomSalle FROM Salles WHERE idSalle=:idSalleTag", $values)->fetch()["nomSalle"];
+                        $worker = Database::safe_execute("SELECT * FROM Coworkers WHERE idCoworker=:idWorkerTag", $values)->fetch();
                         $nomWorker = $worker["nomCoworker"];
                         $prenomWorker = $worker["prenomCoworker"];
                         echo "<h1>Réservation de la salle $nomSalle pour le $date effectuée pour $nomWorker $prenomWorker.</h1>";
@@ -38,8 +39,7 @@
     </section>
 </main>
 <footer>
-    <?php include("general/footer.php");
-    $fillInTheBlanks = ""; ?>
+    <?php require 'general/footer.php' ?>
 </footer>
 </body>
 </html>

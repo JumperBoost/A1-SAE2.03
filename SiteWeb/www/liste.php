@@ -1,24 +1,20 @@
+<?php require_once 'general/database.php' ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <?php include("general/head.php");
-    $fillInTheBlanks = ""; ?>
+    <?php require 'general/head.php' ?>
     <title>Utilisateurs - Coworkers.net</title>
 </head>
 <body>
 <header>
-    <?php include("general/nav.php");
-    $fillInTheBlanks = ""; ?>
+    <?php require 'general/nav.php' ?>
 </header>
 <main id="main-utilisateurs">
     <section class="utilisateurs">
-        <?php global $db;
-        include("general/connect.php");
-        ?>
         <?php
-            $Coworkers = $db->query("SELECT c.idCoworker, nomCoworker, prenomCoworker, COUNT(r.idSalle) AS nbReservations FROM Coworkers c LEFT JOIN Reservations r 
-            ON c.idCoworker  = r.idCoworker 
-            GROUP BY c.idCoworker;");
+            $Coworkers = Database::execute("SELECT c.idCoworker, nomCoworker, prenomCoworker, COUNT(r.idSalle) AS nbReservations
+            FROM Coworkers c LEFT JOIN Reservations r ON c.idCoworker = r.idCoworker GROUP BY c.idCoworker;");
             foreach($Coworkers as $Coworker): ?>
                <div class="donnees">
                     <h1> <?=$Coworker['nomCoworker'] ?> <?=$Coworker['prenomCoworker'] ?> a  réservé <?=$Coworker['nbReservations'] ?> salle(s)</h1>
@@ -27,7 +23,7 @@
     </section>
 </main>
 <footer>
-    <?php include("general/footer.php"); $fillInTheBlanks = "";?>
+    <?php require 'general/footer.php' ?>
 </footer>
 </body>
 </html>

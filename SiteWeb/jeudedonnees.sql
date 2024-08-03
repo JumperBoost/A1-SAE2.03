@@ -24,7 +24,7 @@ CREATE TABLE Salles (
     nomSalle VARCHAR(100)NOT NULL ,
     superficieSalle INT(3),
     capaciteSalle INT(4),
-    prixJournnee DECIMAL(5,2),
+    prixJournee DECIMAL(5,2),
     idBatiment INT REFERENCES Batiments(idBatiment),
     descriptionSalleCourte VARCHAR(300),
     descriptionSalle VARCHAR(5000)
@@ -56,11 +56,11 @@ VALUES (1, 'K', 'Montpellier', 'Batiment orné de la lettre K');
 INSERT INTO Batiments (idBatiment,nomBatiment, ville, descriptionBatiment)
 VALUES (2, '02', 'Sete', 'Batiment orné du chiffre 02');
 
-INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournnee, idBatiment, descriptionSalleCourte, descriptionSalle)
+INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournee, idBatiment, descriptionSalleCourte, descriptionSalle)
 VALUES ('Give and Take', 30, 8, 79.99, 1, 'Salle parfaite pour travaillé au calme ...', 'Je suis une description longue');
-INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournnee, idBatiment, descriptionSalleCourte, descriptionSalle)
+INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournee, idBatiment, descriptionSalleCourte, descriptionSalle)
 VALUES ('Stayed Gone', 15, 4, 40, 1, 'Salle parfaite pour travaillé au calme ...', 'Je suis une description longue');
-INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournnee, idBatiment, descriptionSalleCourte, descriptionSalle)
+INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournee, idBatiment, descriptionSalleCourte, descriptionSalle)
 VALUES ('Let\'s Go!', 60, 16, 99.99, 2, 'Salle spatieuse ...', 'Je suis une description longue');
-INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournnee, idBatiment, descriptionSalleCourte, descriptionSalle)
+INSERT INTO Salles (nomSalle, superficieSalle, capaciteSalle, prixJournee, idBatiment, descriptionSalleCourte, descriptionSalle)
 VALUES ('Must Have Been the Wind', 10, 3, 50, 2, 'Salle spatieuse ...', 'Je suis une description longue');

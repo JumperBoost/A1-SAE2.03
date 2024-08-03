@@ -1,6 +1,3 @@
-<?php global $db;
-$fillInTheBlanks = ""; ?>
-
 <nav>
     <div class="logo">
         <h1><a href="index.php">Coworkers.net</a></h1>

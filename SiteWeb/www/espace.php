@@ -1,12 +1,14 @@
+<?php require_once 'general/database.php' ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <?php include("general/head.php"); $fillInTheBlanks = "";?>
+    <?php require 'general/head.php' ?>
     <title>Espaces de Coworking - Coworkers.net</title>
 </head>
 <body>
 <header>
-    <?php include("general/nav.php"); $fillInTheBlanks = "";?>
+    <?php require 'general/nav.php' ?>
 </header>
 <main>
     <section>
@@ -14,15 +16,13 @@
     </section>
     <section>
         <div class = "menu">
-            <?php global $db;
-            include("general/connect.php");
-            $Batiments = $db->query("SELECT idBatiment, nomBatiment, ville, descriptionBatiment FROM Batiments;");
+            <?php
+            $Batiments = Database::execute("SELECT idBatiment, nomBatiment, ville, descriptionBatiment FROM Batiments;");
             foreach($Batiments as $Batiment):
-                $Salles = $db->query("SELECT * FROM Salles WHERE idBatiment = $Batiment[idBatiment]");
-                $nbSalles = $db->query("SELECT COUNT(*) AS nbSalles FROM Salles WHERE idBatiment='$Batiment[idBatiment]';")->fetch()["nbSalles"]; ?>
+                $Salles = Database::execute("SELECT * FROM Salles WHERE idBatiment = $Batiment[idBatiment]");
+                $nbSalles = Database::execute("SELECT COUNT(*) AS nbSalles FROM Salles WHERE idBatiment=$Batiment[idBatiment];")->fetch()["nbSalles"]; ?>
             <a class="menuF">
                 <div class="donnees">
-
                     <div class="image"> <img class="image" src="img/<?=$Batiment['nomBatiment']?>.jpg"> </div>
                     <div class="text">
                         <h1>Batiment : <?=$Batiment['nomBatiment']?></h1>
@@ -40,7 +40,7 @@
     </section>
 </main>
 <footer>
-    <?php include("general/footer.php"); $fillInTheBlanks = "";?>
+    <?php require 'general/footer.php' ?>
 </footer>
 </body>
 </html>
